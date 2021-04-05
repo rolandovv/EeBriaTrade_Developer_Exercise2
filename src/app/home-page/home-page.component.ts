@@ -13,9 +13,9 @@ export class HomePageComponent implements OnInit {
 
   //Parameters(user input) for the filters
   drinkStyle = '';
-  SortbyParam = '';
-  SortDirection = 'asc';
-  SortbyPrice = '';
+  sortbyParam = '';
+  sortDirection = 'asc';
+  sortbyPrice = '';
 
   //Use dependency injection to call the service 
   constructor(private backendApiService: BackendApiService) { }
@@ -32,10 +32,10 @@ export class HomePageComponent implements OnInit {
 
   //Solves the descending or ascending logic for the sorting 
   onSortDirection() {
-    if (this.SortDirection === 'desc') {
-      this.SortDirection = 'asc';
+    if (this.sortDirection === 'desc') {
+      this.sortDirection = 'asc';
     } else {
-      this.SortDirection = 'desc';
+      this.sortDirection = 'desc';
     }
   }
 
@@ -47,7 +47,7 @@ export class HomePageComponent implements OnInit {
 
   //Clears the respective filter
   onPriceFilterClear() {
-    this.SortbyPrice = '';
+    this.sortbyPrice = '';
   }
 
   // onParamFilterClear() {
