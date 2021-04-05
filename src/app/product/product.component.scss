@@ -1,0 +1,55 @@
+.product-main{
+    margin: 30px 0;
+    //border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    //grid-gap: 0 calc(10px + 0.35vw);
+
+    background-color: #26a585;
+    padding: 10px; 
+}
+
+.product_img{
+
+    @media (min-width: 320px) and (max-width: 767px) {    
+        grid-column: 1/6;
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      
+        grid-column: 1/4;
+    }
+  
+    @media (min-width: 1280px){
+        grid-column: 1/4;
+    }
+}
+
+.product-info{
+
+    padding: 0 10px;
+
+    @media (min-width: 320px) and (max-width: 767px) {    
+        grid-column: 6/13;
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      
+        grid-column: 4/13;
+    }
+  
+    @media (min-width: 1280px){
+        grid-column: 4/8;
+    }
+}
+
+// .product-name{
+//     font-family: 'Bitter', HWTVanLanen, sans-serif;
+// }
+
+.product_img-3 {
+    max-width: 100%;
+    max-height: 100%;
+}

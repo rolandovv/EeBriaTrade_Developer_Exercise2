@@ -1,0 +1,56 @@
+<div class="home-wrapper">
+
+  <!-- filters-section -->
+  <div class="filers-main">
+    <div class="select-filter">
+      <label for="drinkStyle">Filter by drink : </label>
+      <select [(ngModel)]='drinkStyle' id="drinkStyle" name="drinkStyle">
+        <option value="beer">Beer</option>
+        <option value="cider">Cider</option>
+      </select>
+      <button type="button" (click)="onDrinkFilterClear()">Clear</button> &nbsp;
+    </div>
+    <div class="sorting-filter2">
+      <label>Filter by price &nbsp;</label>
+      <select [(ngModel)]='SortbyPrice'>
+        <option value="cheaper">Cheaper</option>
+        <option value="expensive">Expensive</option>
+      </select>
+      <button type="button" (click)="onPriceFilterClear()">Clear</button> &nbsp;
+    </div>
+    <div class="sorting-filter3">
+      <label>Sort by &nbsp;</label>
+      <select [(ngModel)]='SortbyParam'>
+        <option value="price">Price</option>
+        <option value="name">Name</option>
+      </select>
+      <button type="button" (click)="onSortDirection()">
+        <!-- <i *ngIf="SortDirection==='asc'" class="fa fa-sort-desc" aria-hidden="true"></i>
+        <i *ngIf="SortDirection==='desc'" class="fa fa-sort-asc" aria-hidden="true"></i> -->
+        <i class="fa fa-sort" aria-hidden="true"></i>
+      </button>
+      <!-- <button type="button" (click)="onParamFilterClear()">Clear</button> &nbsp; -->
+    </div>
+  </div>
+
+  <!-- Product-details-section -->
+  <div class="product-component">
+    <product *ngFor="let product of products|filter: drinkStyle:'style'|sort:[SortbyParam, SortDirection]| sortPrice:['price', SortbyPrice]" [product]="product"></product>
+  </div>
+  <!-- <div *ngFor="let product of products|filter: drinkStyle:'style'|sort:[SortbyParam, SortDirection]| sortPrice:['price', SortbyPrice]" class="product-main">
+    <div class="product-name">
+      {{product.name}}
+    </div>
+    <div class="product_img">
+      <picture class="product_img-2">
+        <img class="product_img-3" src="{{product.image}}">
+      </picture>
+    </div>
+    <div class="product-style">
+      {{product.style}}
+    </div>
+    <div class="product-price">
+      {{product.price}}
+    </div>
+  </div> -->
+</div>
